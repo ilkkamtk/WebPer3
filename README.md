@@ -11,7 +11,7 @@
 2. Avaa terminaali (cmd + välilyönti, kirjoita terminal)
 3. Mene kansioon 'WebPerusteet' `cd Documents/WebPerusteet`
 4. Lataa tämä repo git `clone https://github.com/ilkkamtk/WebPer1.git`
-5. Tiedostot pitää olla palvelimella (users.metropolia.fi / virtuaalikone  / localhost), jotta AJAX-pyynnöt toimii
+5. Tiedostot pitää olla palvelimella (users.metropolia.fi / virtuaalikone  / localhost), jotta AJAX-pyynnöt toimivat
 
 ### Tehtävä A
   * Tehdään AJAX-sovellus, joka hakee valmiin HTML-koodin ja näyttää sen HTML-sivulla
