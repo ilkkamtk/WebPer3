@@ -11,6 +11,7 @@
 2. Avaa terminaali (cmd + välilyönti, kirjoita terminal)
 3. Mene kansioon 'WebPerusteet' `cd Documents/WebPerusteet`
 4. Lataa tämä repo git `clone https://github.com/ilkkamtk/WebPer1.git`
+5. Tiedostot pitää olla palvelimella (users.metropolia.fi / virtuaalikone  / localhost), jotta AJAX-pyynnöt toimii
 
 ### Tehtävä A
   * Tehdään AJAX-sovellus, joka hakee valmiin HTML-koodin ja näyttää sen HTML-sivulla
@@ -36,5 +37,8 @@
 ### Tehtävä D 
   * Tee sama toiminnallisuus, kuin tehtävissä B ja C. XMLHttpRequestin sijasta käytä fetch-luokkaa.
   * apuja: https://davidwalsh.name/fetch
+
+## Palautus
+1. Kopioi tämä kansio (WebPer3) kotihakemistoosi ja palauta Tuubiin linkki.
 
 
