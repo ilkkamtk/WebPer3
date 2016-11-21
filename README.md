@@ -10,7 +10,7 @@
 1. Tee Documents kansioon uusi kansio 'WebPerusteet' (mikäli et ole aikaisemmin sitä tehnyt)
 2. Avaa terminaali (cmd + välilyönti, kirjoita terminal)
 3. Mene kansioon 'WebPerusteet' `cd Documents/WebPerusteet`
-4. Lataa tämä repo git `clone https://github.com/ilkkamtk/WebPer1.git`
+4. Lataa tämä repo `git clone https://github.com/ilkkamtk/WebPer3.git`
 5. Tiedostot pitää olla palvelimella (users.metropolia.fi / virtuaalikone  / localhost), jotta AJAX-pyynnöt toimivat
 
 ### Tehtävä A
