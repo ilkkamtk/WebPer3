@@ -15,7 +15,7 @@
 
 ### Tehtävä A
   * Tehdään AJAX-sovellus, joka hakee valmiin HTML-koodin ja näyttää sen HTML-sivulla
-  * Käytetään HTML-lähteenä PHP:llä tehtyä skriptiä X
+  * Käytetään HTML-lähteenä kuvat.html-tiedostoa
   * Avaa teht-a.html sekä js/main-a.js
   * Tarkemmat ohjeet js/main-a.js kommenteissa
   * Apuja: http://www.w3schools.com/js/js_ajax_http_send.asp
@@ -23,6 +23,7 @@
 ### Tehtävä B 
   * Tehdään AJAX-sovellus, joka hakee tiedot JSON-muodossa
   * JSON parsitaan ja saadusta datasta muodostetaan HTML, joka näytetään HTML-sivulla
+  * Käytetään JSON-lähteenä kuvat.json-tiedostoa
   * Avaa teht-b.html sekä js/main-b.js
   * Tarkemmat ohjeet js/main-b.js kommenteissa
   * Apuja: http://www.w3schools.com/js/js_json_http.asp
