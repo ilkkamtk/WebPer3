@@ -3,6 +3,7 @@
 ## Asynchronous JavaScript And XML
   * https://fi.wikipedia.org/wiki/Ajax_(ohjelmointi)
   * http://www.w3schools.com/xml/ajax_intro.asp
+  * http://www.json.org/
   * https://github.com/mattpe/wbma/blob/master/docs/w3-promises.md
   * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 
