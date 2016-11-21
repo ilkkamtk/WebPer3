@@ -30,14 +30,31 @@ var xhr = new XMLHttpRequest();
 var showImages = function(){
   if(xhr.readyState === 4 && xhr.status === 200){
     var json = JSON.parse(xhr.responseText);
+    console.log(json);
     for(var i in json){
-        var li = document.createElement('li');
-        var figure = document.createElement('figure');
+        // lähdetään sisältä ulos
+        var title = document.createTextNode(json[i].mediaTitle);
+        var h3 = document.createElement('h3');
+        h3.appendChild(title);
+
+        var figcaption = document.createElement('figcaption');
+        figcaption.appendChild(h3);
+
+        var img = document.createElement('img');
+        img.setAttribute('src', 'img/thumbs/'+json[i].mediaThumb)
         var a = document.createElement('a');
         a.setAttribute('href', 'img/original/'+json[i].mediaUrl);
-        JNE
+        a.appendChild(img);
+
+        var figure = document.createElement('figure');
         figure.appendChild(a);
-        JNE
+        figure.appendChild(figcaption);
+
+        var li = document.createElement('li');
+        li.appendChild(figure);
+
+        var ul = document.querySelector('ul');
+        ul.appendChild(li);
     }
   }
 }
