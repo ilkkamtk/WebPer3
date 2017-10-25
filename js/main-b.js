@@ -1,10 +1,9 @@
-// Tee XMLHttpRequest-objekti. Anna sen nimeksi xhr
+
 
 // Tee funktio 'showImages', joka
-// tarkastaa onko readyState ja status sellaiset että ladatun sisällön voi näyttää sekä
-// muuttaa ladatun JSON-tekstin JavaScript-objektiksi
-// Tee funktioon myös muuttuja 'output', jolle annat arvoksi tyhjän merkkijonon sekä
-// tee silmukka joka rakentaa jokaisesta kuvasta alla olevan HTML:n
+// lataa kuvat.json tiedoston, joka sisältää näytettävät kuvat taulukkona
+
+// tee silmukka joka lisää merkkijonoon (string) jokaisesta kuvasta alla olevan HTML:n
 /*
 <li>
     <figure>
@@ -14,11 +13,5 @@
         </figcaption>
     </figure>
 </li>
-*/
-// lisää em. HTML output-muuttujaan
-// Silmukan jälkeen tulosta HTML-koodi (output) <ul>-elementin sisälle.
-// Funktio päättyy.
 
-// avaa XMLHttpRequest-yhteys osoitteeseen X, metodi GET
-// kun readystate vaihtuu, kutsu showImages funktiota
-// lähetä XMLHttpRequest-pyyntö
+// Silmukan jälkeen tulosta HTML-koodi (output) <ul>-elementin sisälle innerHTML:n avulla

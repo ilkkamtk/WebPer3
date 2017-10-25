@@ -1,34 +1,33 @@
-# Web-sovelluskehityksen perusteet 2017
+# AJAX
 
-Opintojakson sisältö:
-* www-palvelun kehitysprosessi ja työkalut
-* Käyttäjätieto ja sen hankinta
-* Verkkosivujen tekniikat
-* Tiedonhallinta
-* Palvelinohjelmointi
-* Selainohjelmointi
-* Matematiikka
+## Asynchronous JavaScript And XML
+  * http://www.w3schools.com/xml/ajax_intro.asp (käytetään tämän sijasta fetchiä)
+  * http://www.json.org/
+  * https://github.com/mattpe/wbma/blob/master/docs/w3-promises.md
+  * https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+  * https://github.com/github/fetch  -fetch polyfill
 
-Opintojaksolla toteutetaan tiimityöskentelynä ohjelmistoprojekti. Opintojaksolla annetaan tiedot suurehkon www-palvelun kehitysprosessista ja työkaluista. Projekti toimii alustana verkkosivujen tekniikoiden, tiedonhallinnan sekä palvelin- ja selainohjelmoinnin käsitteiden omaksumiselle. Oppimista tuetaan tarvittaessa muilla menetelmillä kuten verkko-opinnoilla.
+## Aloitus
+1. Lataa tämä repo zippinä https://github.com/ilkkamtk/WebPer3 ja pura se
 
-Projektina toteutetaan pareittain median jakamiseen ja hallinnoimiseen tarkoitettu sovellus. Esimerkkinä voi käyttää esim Instagramia. Medialla tarkoitetaan kuvia, videota ja ääntä. Sovelluksessa tulisi olla seuraavat ominaisuudet:
+### Tehtävä A
+  * Tehdään AJAX-sovellus, joka hakee valmiin HTML-koodin ja näyttää sen HTML-sivulla
+  * Käytetään HTML-lähteenä kuvat.html-tiedostoa
+  * Avaa teht-a.html sekä js/main-a.js
+  * Tarkemmat ohjeet js/main-a.js kommenteissa
+  * Apuja: https://developer.mozilla.org/en-US/docs/Web/API/Body/text
 
-* Tiedostojen tallennus (upload)
-* Tiedostojen selaaminen ja hakeminen
-* Tiedostojen kommentointi ja 'tykkääminen'/arviointi
-* Tiedostojen metadatan hyödyntäminen (esim. EXIF-data)
-* Statistiikka tiedostojen käytöstä
-* Käyttökokemuksen suunnittelu
-* Responsiivinen käyttöliittymä
-* Toteutus PHP+MySQL+JavaScript+HTML+CSS
-* Relaatiotietokanta
+### Tehtävä B 
+  * Tehdään AJAX-sovellus, joka hakee tiedot JSON-muodossa
+  * JSON parsitaan ja saadusta datasta muodostetaan HTML, joka näytetään HTML-sivulla
+  * Käytetään JSON-lähteenä kuvat.json-tiedostoa
+  * Avaa teht-b.html sekä js/main-b.js
+  * Tarkemmat ohjeet js/main-b.js kommenteissa
+  * Apuja: https://developer.mozilla.org/en-US/docs/Web/API/Body/json
 
-## Teoriat
-* [GIT basic usage / submitting tasks](./teoria/W1-1-git.md)
-* [JS style guide](./teoria/W1-2-JS-styleguide.md)
-* [ES6 perusteita](teoria/W1-3-ES6.md)
-
-## Tehtävät
-1. [CSS kertausta](https://github.com/ilkkamtk/imageList)
-2. [Lomakkeen validointi](tehtävät/lomakkeenValidointi.md)
-3. [AJAX](tehtävät/ajax.md)
+### Tehtävä C 
+  * Tehdään AJAX-sovellus, kuten tehtävässä B
+  * Erona on se että HTML rakennetaan käyttämällä DOM-metodeja
+  * Avaa teht-c.html sekä js/main-c.js
+  * Tarkemmat ohjeet js/main-c.js kommenteissa
+  * Apuja: http://www.w3schools.com/js/js_htmldom_nodes.asp

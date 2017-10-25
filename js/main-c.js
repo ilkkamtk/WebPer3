@@ -1,10 +1,9 @@
-// Tee XMLHttpRequest-objekti. Anna sen nimeksi xhr
+
 
 // Tee funktio 'showImages', joka
-// tarkastaa onko readyState ja status sellaiset että ladatun sisällön voi näyttää sekä
-// muuttaa ladatun JSON-tekstin JavaScript-objektiksi
-// Lisää funktioon muuttuja nimeltään ul, joka sisältää HTML-sivulla olevan <ul>-elementin.
-// Lisää funktioon silmukka, joka rakentaa jokaisesta kuvasta alla olevan HTML:n
+// lataa kuvat.json tiedoston, joka sisältää näytettävät kuvat taulukkona
+
+// tee silmukka joka tekee jokaisesta kuvasta alla olevan HTML:n DOM-metodien avulla. Kun alla oleva rakenne on valmis, ne lisätään ul-elementin sisälle
 /*
 <li>
     <figure>
@@ -18,9 +17,4 @@
 // Tee HTML-elementit createElement-metodilla ja
 // lisää attribuutit setAttribute-metodilla tai elementti.attribuutti -syntaksilla.
 // Lisää elementit toistensa sisälle appendChild-metodilla.
-// Lisää ne lopuksi ul muuttuja sisälle, jolloinka ne tulostuvat HTML-sivulle.
-// Funktio päättyy.
-
-// avaa XMLHttpRequest-yhteys osoitteeseen X, metodi GET
-// kun readystate vaihtuu, kutsu showImages funktiota
-// lähetä XMLHttpRequest-pyyntö
+// Lisää ne lopuksi ul elementin sisälle, jolloinka ne tulostuvat HTML-sivulle.
