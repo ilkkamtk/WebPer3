@@ -15,9 +15,7 @@
   * Käytetään HTML-lähteenä kuvat.html-tiedostoa
   * Avaa teht-a.html sekä js/main-a.js
   * Tarkemmat ohjeet js/main-a.js kommenteissa
-  * Apuja:
-    * http://wesbos.com/template-strings-html/
-    * https://developer.mozilla.org/en-US/docs/Web/API/Body/text
+  * Apuja: https://developer.mozilla.org/en-US/docs/Web/API/Body/text
 
 ### Tehtävä B 
   * Tehdään AJAX-sovellus, joka hakee tiedot JSON-muodossa
@@ -25,7 +23,9 @@
   * Käytetään JSON-lähteenä kuvat.json-tiedostoa
   * Avaa teht-b.html sekä js/main-b.js
   * Tarkemmat ohjeet js/main-b.js kommenteissa
-  * Apuja: https://developer.mozilla.org/en-US/docs/Web/API/Body/json
+  * Apuja:
+    * http://wesbos.com/template-strings-html/ 
+    * https://developer.mozilla.org/en-US/docs/Web/API/Body/json
 
 ### Tehtävä C 
   * Tehdään AJAX-sovellus, kuten tehtävässä B
