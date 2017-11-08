@@ -1,49 +1,68 @@
-// Tee XMLHttpRequest-objekti. Anna sen nimeksi xhr
+'use strict';
 
 // Tee funktio 'showImages', joka
-// tarkastaa onko readyState ja status sellaiset että ladatun sisällön voi näyttää sekä
-// muuttaa ladatun JSON-tekstin JavaScript-objektiksi
-// Tee funktioon myös muuttuja 'output', jolle annat arvoksi tyhjän merkkijonon sekä
-// tee silmukka joka rakentaa jokaisesta kuvasta alla olevan HTML:n
+// lataa kuvat.json tiedoston, joka sisältää näytettävät kuvat taulukkona
+
+// tee silmukka joka lisää merkkijonoon (string) jokaisesta kuvasta alla olevan HTML:n
 /*
-<li>
+`<li>
     <figure>
         <a href="img/original/filename.jpg"><img src="img/thumbs/filename.jpg"></a>
         <figcaption>
             <h3>Title</h3>
         </figcaption>
     </figure>
-</li>
+</li>`
 */
-// lisää em. HTML output-muuttujaan
-// Silmukan jälkeen tulosta HTML-koodi (output) <ul>-elementin sisälle.
-// Funktio päättyy.
+// Silmukan jälkeen tulosta HTML-koodi (output) <ul>-elementin sisälle innerHTML:n avulla
+/*
+const showImages = () => {
+  fetch('kuvat.json').then((response) => {
+    return response.json();
+  }).then((json) => {
+    console.log(json);
+    let html = '';
+    json.forEach((kuva) => {
+      html += `<li>
+                  <figure>
+                      <a href="img/original/${kuva.mediaUrl}"><img src="img/thumbs/${kuva.mediaThumb}"></a>
+                      <figcaption>
+                          <h3>${kuva.mediaTitle}</h3>
+                      </figcaption>
+                  </figure>
+              </li>`;
+    });
+    const ul = document.querySelector('ul');
+    ul.innerHTML = html;
+  });
+};
 
-// avaa XMLHttpRequest-yhteys osoitteeseen X, metodi GET
-// kun readystate vaihtuu, kutsu showImages funktiota
-// lähetä XMLHttpRequest-pyyntö
+showImages();
+*/
 
+// sama tehtynä funktiolla jossa ei ole kovakoodausta
+const loadJSON = (url, func) => {
+  fetch(url).then((response) => {
+    return response.json();
+  }).then((json) => {
+    func(json);
+  });
+};
 
-var xhr = new XMLHttpRequest();
+const templateFunction = (json) => {
+  let html = '';
+  json.forEach((kuva) => {
+    html += `<li>
+            <figure>
+                <a href="img/original/${kuva.mediaUrl}"><img src="img/thumbs/${kuva.mediaThumb}"></a>
+                <figcaption>
+                    <h3>${kuva.mediaTitle}</h3>
+                </figcaption>
+            </figure>
+        </li>`;
+  });
+  const element = document.querySelector('ul');
+  element.innerHTML = html;
+};
 
-var showImages = function(){
-  if(xhr.readyState === 4 && xhr.status === 200){
-    var json = JSON.parse(xhr.responseText);
-    var output = '';
-    for(var i in json){
-      output += '<li>' +
-                    '<figure>' +
-                        '<a href="img/original/' + json[i].mediaUrl +'"><img src="img/thumbs/' + json[i].mediaUrl + '"></a>' +
-                         '<figcaption>' +
-                            '<h3>' + json[i].mediaTitle + '</h3>' +
-                         '</figcaption>' +
-                    '</figure>' +
-                '</li>';
-    }
-    document.querySelector('ul').innerHTML = output;
-  }
-}
-
-xhr.open('GET', 'kuvat.html');
-xhr.onreadystatechange = showImages;
-xhr.send();
+loadJSON('kuvat.json', templateFunction);

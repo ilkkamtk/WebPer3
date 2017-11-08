@@ -1,22 +1,33 @@
-// tee XMLHttpRequest-objekti. Anna sen nimeksi xhr
-
+'use strict';
+/*
 // tee funktio 'showImages', joka
-// tarkastaa onko readyState ja status sellaiset että ladatun sisällön voi näyttää, sekä 
-// lisää ladatun HTML-sisällön <ul> elementin sisälle
 
-// avaa XMLHttpRequest-yhteys osoitteeseen X, metodi GET
-// kun readystate vaihtuu, kutsu showImages funktiota
-// lähetä XMLHttpRequest-pyyntö
+const showImages = () => {
+      fetch('kuvat.html').then((response) => {
+        return response.text();
+      }).then((text) => {
+        console.log(text);
+        // lisää ladatun HTML-sisällön <ul> elementin sisälle
+        const ul = document.querySelector('ul');
+        ul.innerHTML = text;
+      });
+    };
 
+showImages();
+*/
 
-var xhr = new XMLHttpRequest();
+// sama tehtynä funktiolla jossa ei ole kovakoodausta
 
-var showImages = function(){
-  if(xhr.readyState === 4 && xhr.status === 200){
-    document.querySelector('ul').innerHTML = xhr.responseText;
-  }
-}
+const loadHTML = (url, target) => {
+  // url = osoite tiedostoon joka ladataan
+  fetch(url).then((response) => {
+    return response.text();
+  }).then((text) => {
+    console.log(text);
+    // lisää ladatun sisällön target parametrillä määrätyn elementin sisälle
+    const element = document.querySelector(target);
+    element.innerHTML = text;
+  });
+};
 
-xhr.open('GET', 'kuvat.html');
-xhr.onreadystatechange = showImages;
-xhr.send();
+loadHTML('kuvat.html', 'ul');

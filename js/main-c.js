@@ -1,10 +1,9 @@
-// Tee XMLHttpRequest-objekti. Anna sen nimeksi xhr
+'use strict';
 
 // Tee funktio 'showImages', joka
-// tarkastaa onko readyState ja status sellaiset että ladatun sisällön voi näyttää sekä
-// muuttaa ladatun JSON-tekstin JavaScript-objektiksi
-// Lisää funktioon muuttuja nimeltään ul, joka sisältää HTML-sivulla olevan <ul>-elementin.
-// Lisää funktioon silmukka, joka rakentaa jokaisesta kuvasta alla olevan HTML:n
+// lataa kuvat.json tiedoston, joka sisältää näytettävät kuvat taulukkona
+
+// tee silmukka joka tekee jokaisesta kuvasta alla olevan HTML:n DOM-metodien avulla. Kun alla oleva rakenne on valmis, ne lisätään ul-elementin sisälle
 /*
 <li>
     <figure>
@@ -18,47 +17,48 @@
 // Tee HTML-elementit createElement-metodilla ja
 // lisää attribuutit setAttribute-metodilla tai elementti.attribuutti -syntaksilla.
 // Lisää elementit toistensa sisälle appendChild-metodilla.
-// Lisää ne lopuksi ul muuttuja sisälle, jolloinka ne tulostuvat HTML-sivulle.
-// Funktio päättyy.
+// Lisää ne lopuksi ul elementin sisälle, jolloinka ne tulostuvat HTML-sivulle.
 
-// avaa XMLHttpRequest-yhteys osoitteeseen X, metodi GET
-// kun readystate vaihtuu, kutsu showImages funktiota
-// lähetä XMLHttpRequest-pyyntö
 
-var xhr = new XMLHttpRequest();
+const showImages = () => {
+  fetch('kuvat.json').then((response) => {
+    return response.json();
+  }).then((json) => {
+    const ul = document.querySelector('ul');
+    json.forEach((kuva) => {
+      // img elementti (esim: src arvossa käytetty normaalia tapaa jaktaa stringiä)
+      const img = document.createElement('img');
+      img.setAttribute('src', 'img/thumbs/'+kuva.mediaThumb);
+      // a elementti (esim: href arvossa käytetty backtickejä)
+      const a = document.createElement('a');
+      a.setAttribute('href', `img/original/${kuva.mediaUrl}`);
+      // img a:n sisään
+      a.appendChild(img);
 
-var showImages = function(){
-  if(xhr.readyState === 4 && xhr.status === 200){
-    var json = JSON.parse(xhr.responseText);
-    console.log(json);
-    for(var i in json){
-        // lähdetään sisältä ulos
-        var title = document.createTextNode(json[i].mediaTitle);
-        var h3 = document.createElement('h3');
-        h3.appendChild(title);
+      // h3 elementti
+      const h3 = document.createElement('h3');
+      h3.innerText = kuva.mediaTitle;
+      // figcation elementti
+      const figc = document.createElement('figcaption');
+      // h3 figcaptionin sisään
+      figc.appendChild(h3);
 
-        var figcaption = document.createElement('figcaption');
-        figcaption.appendChild(h3);
+      // figure elementti
+      const figure = document.createElement('figure');
+      // a figuren sisään
+      figure.appendChild(a);
+      // figcaption figuren sisään
+      figure.appendChild(figc);
 
-        var img = document.createElement('img');
-        img.setAttribute('src', 'img/thumbs/'+json[i].mediaThumb)
-        var a = document.createElement('a');
-        a.setAttribute('href', 'img/original/'+json[i].mediaUrl);
-        a.appendChild(img);
+      // li elementti
+      const li = document.createElement('li');
+      // figure li:n sisään
+      li.appendChild(figure);
 
-        var figure = document.createElement('figure');
-        figure.appendChild(a);
-        figure.appendChild(figcaption);
+      // uudet elementit näkyville, eli laitettan ne html sivulla olemassa olevan ul:n sisälle
+      ul.appendChild(li);
+    });
+  });
+};
 
-        var li = document.createElement('li');
-        li.appendChild(figure);
-
-        var ul = document.querySelector('ul');
-        ul.appendChild(li);
-    }
-  }
-}
-
-xhr.open('GET', 'kuvat.json');
-xhr.onreadystatechange = showImages;
-xhr.send();
+showImages();

@@ -78,7 +78,7 @@ body {
 }
 
 header {
-    background-image: url(http://placekitten.com/960/100);
+    background-image: url(http://via.placeholder.com/960x100/000?text=HeaderBGImage);
     background-position: center;
     width: 100%;
 }
